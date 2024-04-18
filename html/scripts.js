@@ -1,5 +1,5 @@
 function send() {
-    let url = "http://192.168.111.21:3000/";
+    let url = `http://${WAS_IP}:3000/`;
     let name = document.querySelector("input[name='name']").value;
     sendGet(url, name);
 }
