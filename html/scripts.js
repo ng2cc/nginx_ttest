@@ -24,9 +24,3 @@ function sendGet(url, name = '') {
   http.setRequestHeader("Content-type", "multipart/form-data");
   http.send();
 }
-
-addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    send();
-  }
-});
