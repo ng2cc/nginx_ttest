@@ -1,11 +1,7 @@
 function send(type) {
-  const SERVER_IP = `http://${WAS_IP}:3000/`;
-  switch (type) {
-    case 'search':
-      let name = document.querySelector("input[name='name']").value;
-      sendGet(SERVER_IP + type, name);
-      break;
-  }
+  const SERVER_IP = `http://${WAS_IP}:3000/${type}/`;
+  let name = document.querySelector("input[name='name']").value;
+  sendGet(SERVER_IP + type, name);
 }
 
 function sendGet(url, name = '') {
