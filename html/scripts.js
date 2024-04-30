@@ -27,18 +27,12 @@ function httpRequest(url, method, type, params) {
     if (http.status == 200) {
       if (http.readyState == 4) {
         const res = http.responseText === undefined ? '' : JSON.parse(http.responseText);
-        if (res.length === 0) {
-          alert('검색 결과가 없습니다.');
-          return;
-        }
-        for (const [key, value] of Object.entries(res[0])) {
-          let k = key[0].toLowerCase() + key.slice(1);
-          document.querySelector(`span[id='result-${k}']`).innerText = value;
-        }
-        alert('대상자입니다!');
+        if (type === 'insert')
+          if (res.affectedRows > 0)
+            alert('신청이 완료되었습니다.\n신청 번호: ' + res.insertId);
+          else
+            alert('신청이 정상적으로 완료되지 않았습니다.');
       }
-    } else {
-      alert('뭔가 문제가 있어요.\nHTTP Status Code: ' + http.status);
     }
   }
   http.send();
