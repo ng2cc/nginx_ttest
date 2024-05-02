@@ -1,4 +1,4 @@
-const WAS_IP = '192.168.111.21';
+const WAS_IP = 'http://nodejs-alb-456367258.ap-northeast-1.elb.amazonaws.com/';
 
 const TYPE_INFO = {
   search: {
