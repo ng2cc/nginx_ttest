@@ -1,5 +1,5 @@
 function send(type) {
-  const SERVER_IP = `http://${WAS_IP}:3000/${type}/`;
+  const SERVER_IP = `${WAS_IP}:3000/${type}/`;
   let texts = document.querySelectorAll("div#input input[type='text']");
   let numbers = document.querySelectorAll("div#input input[type='number']");
   let selects = document.querySelectorAll("div#input select");
